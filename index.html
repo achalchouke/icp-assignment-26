@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom toggler</title>
+    <style>
+        body{
+            background-color: #FBAB7E;
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        }
+        .app-title{
+            text-align: center;
+            color: #fff;
+        }
+        .emoji-container{
+            background-color: #fff;
+            width: 400px;
+            display: block;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0green, 0blue, 0.1);
+        }
+        .emoji-img{
+            height: 250px;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-toggler{
+            font-size: 20px;
+            padding: 5px 20px;
+            border-radius: 40px;
+            border: none;
+            margin: 0 20px;
+            cursor: pointer;
+            color: #ffff;
+        }
+        .btn-happy{
+            background-color: #0c810a;
+        }
+        .btn-sad{
+            background-color: #860707;
+        }
+        .btn-toggler: hover{
+            box-shadow : 0 0 10px rgba(0,0,0,0.1);
+        }
+        @media screen and (max-width:600px){
+            .emoji-container{
+                width: 80%;
+            }
+            .emoji-img{
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <h1 class="app-title">Emoji Toggler</h1> 
+   <div class="emoji-container">
+    <img src="happy-emoji.png" class="emoji-img" id="emoji"/>
+   </div>
+
+   <div class="btn-container">
+    <button class="btn-toggler btn-happy" onclick="turnHappy()">Happy</button>
+    <button class="btn-toggler btn-sad" onclick="turnSad()">Sad</button>
+   </div>
+
+   <script>
+    function turnHappy(){
+        const emojiElement = document.getElementById("emoji");
+        emojiElement.src = 'happy-emoji.png';
+    }
+    function turnSad(){
+        const emojiElement = document.getElementById("emoji");
+        emojiElement.src = 'sad-emoji.png';
+    }
+   </script>
+</body>
+</html>
